@@ -3,6 +3,7 @@ const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const records = require('./records')
+const port = process.env.PORT || 3000
 
 let onlineCount = 0
 
@@ -47,5 +48,5 @@ records.on("new_message", (msg) => {
 });
 
 server.listen(3000, () => {
-    console.log('Server started. http://locolhost:3000')
+    console.log(`Server started. http://locolhost:${port}`)
 })

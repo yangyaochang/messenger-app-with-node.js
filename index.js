@@ -47,6 +47,6 @@ records.on("new_message", (msg) => {
     io.emit("msg", msg)
 });
 
-server.listen(3000, () => {
+server.listen(port, () => {
     console.log(`Server started. http://locolhost:${port}`)
 })
